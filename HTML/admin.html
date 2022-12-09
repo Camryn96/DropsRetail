@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+		<link rel="stylesheet" href="../styles/style.css">
+		<link rel="icon" type="image/x-icon" href="../assets/dropship.png">
+		<script src="https://www.w3schools.com/lib/w3.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+		<title>DROPS</title>
+	</head>
+	<body>
+	<div class="logonav">
+		<a href="../index.html">
+			<img class="logo"src="../assets/dropship.png"> 
+	   </a>
+	<div class="topnav">
+		<a href="./checkout.html">Checkout</a>
+		<a href="./products.html">Products</a>
+		<a href="./about.html">More on Us</a>
+		<!-- <a href="#contact">Contact</a>
+		<a href="#about">About</a> -->
+	  </div>
+	  <script>
+		var myProducts= {"items":[
+		{"itemCode" : "1234","itemName" : "Phone-stand",      "itemPrice" : "150", "itemQuant":"100"},
+		{"itemCode" : "1235","itemName" : "Two-point-plug",  "itemPrice" : "50","itemQuant" : "200"},
+		{"itemCode" : "1236","itemName" : "USB-drive",      "itemPrice" : "200","itemQuant" : "100"},
+		{"itemCode" : "1237","itemName" : "Batteries",      "itemPrice" : "70","itemQuant" : "100"},
+		{"itemCode" : "1238","itemName" : "USB-charger",    "itemPrice" : "120","itemQuant" : "100"},
+		{"itemCode" : "1239","itemName" : "Laptop-charger", "itemPrice" : "300","itemQuant" : "50"},
+		{"itemCode" : "1230","itemName": "Projector" ,       "itemPrice": "1200","itemQuant" : "20"},
+		{"itemCode" : "1241","itemName": "LED-lights",       "itemPrice" : "400","itemQuant" : "100"},
+		]};
+		</script>
+	  <body>
+
+		<h1><center>CHECKOUT (ADMIN USE ONLY)</center></h1>
+		<hr>
+				<div class="item-form">
+					<form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+						<div>
+							<label>ITEM CODE:*</label><label class="validation-error hide" id="itemCodeValidationError"></label>
+							<input type="number" name="Code" id="itemCode">
+							<button onclick="document.getElementById('itemCode').value = ''">Clear</button>
+						</div>
+						<div>
+							<label>ITEM NAME:</label>
+							<input type="text" name="Name" id="itemName">
+							<button onclick="document.getElementById('itemName').value = ''">Clear</button>
+						</div>
+						<div>
+							<label>ITEM PRICE: in Rands (R) </label>
+							<input type="number" name="Price" id="itemPrice">
+							<button onclick="document.getElementById('itemPrice').value = ''">Clear</button>
+						</div>
+						<div>
+							<label>AVAIL.</label>
+							<input type="number" name="Avail" id="itemAvail">
+							<button onclick="document.getElementById('itemAvail').value = ''">Clear</button>
+						</div>
+						<center>
+							
+						</center>
+						<div  class="form-action-buttons">
+							<input type="submit" value="Submit">
+						</div>
+					</form>
+			</div>
+			<br/>
+			<div class = "items-table">
+					<table class="list" id="itemList">
+						<thead>
+							<tr>
+								<th>CODE:</th>
+								<th>NAME:</th>
+								<th>PRICE:</th>
+								<th>AVAIL:</th>
+								<th>EDIT</th>
+							</tr>
+							<tr w3-repeat="items">
+								<td>{{itemCode}}</td>
+								<td>{{itemName}}</td>
+								<td>{{itemPrice}}</td>
+								<td>{{itemQuant}}</td>
+								<td><button id="adminBtn">edit</button>
+									<button id="adminBtn">delete</button></td>
+							  </tr>
+						</thead>
+						<tbody>
+	
+						</tbody>
+					</table>
+			</div>
+			
+			
+			
+			
+			<script>
+				w3.displayObject("itemList", myProducts);
+				</script>
+					
+		<script src="../javascript/admin.js"></script>
+	</body>
+
+		<!-- <div class="inputs">
+			<form>
+				<input id="itemName" type="text" placeholder="Item Name" required>
+				<input id="price" type="text" placeholder="Price of Item" required>
+				<input id="qual" type="text" placeholder="Quality of Item" required>
+				<button id="submit">Submit</button>
+				<button id="display">Display</button>
+			
+			
+			</form>
+		</div> -->
+			
+		<script src="../javascript/admin.js"></script>
+			<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<style> @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap'); </style>
+</body>
+</html>
